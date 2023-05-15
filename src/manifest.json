@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "clearMask",
+	"version": "1.0.0",
+	"description": "清理网站那些让人讨厌的遮罩",
+	"icons": {
+		"16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+	},
+	"background": {
+		"scripts": []
+	},
+	"browser_action": {
+		"default_icon": "img/icon.png",
+		"default_title": "清理网站那些让人讨厌的遮罩",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["clear/mask.js", "clear/ad.js"],
+			"css": [],
+			"run_at": "document_start"
+		}
+	]
+}
